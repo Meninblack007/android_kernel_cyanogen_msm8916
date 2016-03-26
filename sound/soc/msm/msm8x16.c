@@ -1847,7 +1847,7 @@ static void *def_msm8x16_wcd_mbhc_cal(void)
 	 * 210-290 == Button 2
 	 * 360-680 == Button 3
 	 */
-#if defined CONFIG_MACH_JALEBI
+#ifdef CONFIG_MACH_JALEBI
 	btn_low[0] = 0;
 	btn_high[0] = 150;
 	btn_low[1] = 150;
@@ -1858,6 +1858,17 @@ static void *def_msm8x16_wcd_mbhc_cal(void)
 	btn_high[3] = 150;
 	btn_low[4] = 150;
 	btn_high[4] = 150;
+#elif defined(CONFIG_MACH_CP8675)
+	btn_low[0] = 50;
+	btn_high[0] = 50;
+	btn_low[1] = 75;
+	btn_high[1] = 75;
+	btn_low[2] = 87;
+	btn_high[2] = 87;
+	btn_low[3] = 112;
+	btn_high[3] = 112;
+	btn_low[4] = 137;
+	btn_high[4] = 137;
 #else
 	btn_low[0] = 75;
 	btn_high[0] = 75;
